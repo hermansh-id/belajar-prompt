@@ -1,7 +1,5 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
   "about": {
     "title": "About",
     "type": "page"
@@ -11,5 +9,6 @@
     "type": "page",
     "href": "https://twitter.com/shuding_",
     "newWindow": true
-  }
+  },
+  "contoh_advanced": "Contoh Prompt (Advanced)"
 }

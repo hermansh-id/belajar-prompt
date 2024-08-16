@@ -1,0 +1,23 @@
+# Zero-Shot Prompting
+
+LLM pada umumnya dilatih dengan kemampuan untuk dapat mengikuti perintah berdasarkan data yang telah diberikan.
+Data yang sangat besar ini menyebabkan LLM dapat dengan baik melakukan pekerjaan dengan pola zero-shot. 
+*Zero-shot* adalah teknik prompting tanpa memberikan contoh kepada model, model akan mengetahui jawaban dari pertanyaan pengguna dari data yang telah dilatih sebelumnya.
+
+
+*Prompt:*
+```
+Tentukan apakah teks yang diberikan termasuk pada teks yang memiliki emosi marah, sedih atau senang.
+
+Teks: Saya tidak suka dia, dia pembohong besar
+Emosi:
+```
+
+*Output:*
+```
+Marah
+```
+
+Prompt yang kita berikan tidak memiliki contoh sama sekali, kita memerintahkan model untuk langsung mengklasifikasikan teks berdasar pada kategori yang kita berikan. Pada dasarnya model sudah mengerti mengenai emosi dalam sebuah teks dan cara mengklasifikasikannya berdasarkan data yang telah dilatih kedalam model.
+
+Kita merekomendasikan teknik ini hanya untuk tugas kecil. Tugas-tugas yang kompleks dengan zero-shot prompting akan rawan mengalami kesalahan karena kompleksitas tugas yang diberikan.

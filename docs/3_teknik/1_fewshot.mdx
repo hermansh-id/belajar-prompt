@@ -1,0 +1,38 @@
+# Few-Shot Prompting
+
+Ketika kita menggunakan teknik *zero-shot prompting* untuk tugas yang kompleks, hasil yang diberikan cenderung kurang memuaskan. Teknik *few-shot prompting* dapat digunakan untuk memberikan konteks kepada model, sehingga model dapat menjawab dengan lebih baik. Teknik ini memberikan contoh atau demonstrasi kepada model, sehingga model dapat memahami keinginan pengguna dan memberikan performa jawaban yang lebih baik. Konteks atau demonstrasi yang diberikan berupa beberapa contoh tentang bagaimana seharusnya model menjawab.
+
+Berikut adalah contoh menggunakan teknik few-shot prompting:
+
+*Prompt:*
+```markdown
+"Komodo" adalah hewan yang berasal dari Indonesia dan memiliki racun mematikan. Contoh kalimat menggunakan kata komodo:
+Tour guide mengatakan untuk menjaga jarak dari komodo karena ia memiliki racun yang sangat mematikan.
+
+"Senjakala" adalah kata yang berarti waktu menjelang petang. Contoh penggunaan kata senjakala adalah:
+
+```
+
+*Output:*
+```
+Saat senjakala tiba, langit berubah warna menjadi jingga kemerahan, menciptakan suasana yang tenang dan syahdu.
+```
+
+Anda dapat melihat bahwa model dapat menjawab sesuai dengan konteks dan contoh yang kita berikan. Selain konteks dan contoh kita juga dapat memberikan format yang kita inginkan dari jawaban model.
+
+Berikut prompt yang menggunakan beberapa contoh untuk mengatur model agar dapat menjawa sesuai dengan contoh dan format yang diberikan:
+
+*Prompt:*
+```
+Dia seorang dermawan! : negatif
+Dia tukang bohong! : positif
+Dia pasti tidak punya teman : positif
+Dia sudah selingkuh dengan pria lain
+```
+
+*Output:*
+```
+: positif 
+```
+
+Kita dapat melihat bahwa hasil yang diberikan sesuai dengan yang kita inginkan, padahal sebenarnya emosi yang kita berikan adalah emosi yang berlawanan namun model dapat mengikuti contoh yang kita berikan.

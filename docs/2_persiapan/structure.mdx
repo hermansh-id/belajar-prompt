@@ -1,0 +1,24 @@
+# Struktur Prompt
+
+Prompt atau perintah sebagai input LLM tidak memiliki format atau struktur yang baku, namun anda dapat melakukan efesiensi terhadap prompt sehingga dapat menghasilkan keluaran yang lebih baik dan efesien.
+
+Struktur pada prompt pada umumnya memiliki elemen sebagai berikut:
+
+1. **Instruksi** - tugas yang diberikan pada LLM untuk dilakukan.
+2. **Konteks** - pengetahuan, data, atau informasi apapun yang dapat digunakan oleh LLM sebagai acuan untuk menjawab pertanyaan dengan lebih sesuai.
+3. **Input Pengguna** - masukan dari pengguna berupa pertanyaan, data yang harus diekstraksi atau data yang harus dikerjakan sesuai perintah.
+4. **Format** - format keluaran yang harus digunakan oleh LLM.
+
+Element itu dapat disusun dengan berbagai struktur, misalnya anda bisa menggunakan format markdown seperti berikut:
+```markdown
+# Tugas
+Tugas anda adalah menebak hewan yang berhubungan dari kata-kata yang diberikan
+
+# Contoh
+Sisik, Insang, Berenang: Ikan
+Terbang, Bulu, Langit: Burung
+
+# Input
+Raja, Kucing:
+```
+Anda dapat melihat bahwa struktur dapat melibatkan hanya 1 atau lebih elemen saja sesuai dengan kebutuhan dan tujuan prompting anda. Tidak menutup kemungkinan anda bisa menambahkan elemen lain di dalam struktur prompting tersebut.

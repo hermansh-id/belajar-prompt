@@ -1,0 +1,29 @@
+# Pengaturan 
+
+Prompt yang akan anda gunakan dalam tutorial-tutorial nanti adalah prompt yang pada dasarnya dikirim menggunakan API atau playground, namun juga tetap bisa digunakan jika anda menggunakan prompt pada web/aplikasi chatgpt.
+Jika anda menggunakan API, maka anda akan menemui beberapa pengaturan yang dapat digunakan
+
+### Temperature
+Secara singkat, semakin rendah temperature, semakin deterministik hasilnya dalam arti bahwa token yang muncul berasal dari kata-kata yang paling mungkin muncul hasil dari prediksi model. Meningkatkan temperature dapat menghasilkan lebih banyak kata acak, yang mendorong jawaban LLM yang lebih beragam atau kreatif. 
+Pada dasarnya LLM akan menebak token yang muncul selanjutnya, tebakan ini memiliki beberapa pilihan token yang memiliki bobot masing-masing. Semakin kecil temperature maka bobot paling besar yang akan diambil sebagai token selanjutnya, ketika menaikkan temperature maka kita memberikan bobot ke token lainnya sehingga model dapat memilih lebih banyak pilihan kata.
+Anda perlu menggunakan temperature rendah untuk tugas yang sangat membutuhkan fakta dan lebih ketat untuk format keluaran seperti mencari sentimen pada sebuah kalimat. Selain itu, anda dapat menggunakan temperature tinggi untuk tugas yang membutuhkan kreatifitas seperti membuat cerita atau puisi.
+
+### Top P
+Sebuah teknik sampling dengan temperature, di mana Anda dapat mengontrol seberapa deterministik model tersebut. Jika Anda mencari jawaban yang tepat dan faktual, biarkan nilai ini rendah. Jika Anda mencari respons yang lebih beragam, tingkatkan ke nilai yang lebih tinggi. 
+
+Anda perlu untuk mengubah temperature atau Top P untuk mendapatkan hasil yang diinginkan berdasarkan tujuan dan kasus yang anda punya. Rubah cukup salah satunya saja dan tidak perlu keduanya.
+
+### Max Length
+Anda dapat mengatur jumlah token yang dihasilkan model dengan menggunakan Max Length. Biasanya digunakan untuk dapat mengurangi biaya.
+
+### Stop Sequences
+Stop sequences adalah string yang menjadi patokan untuk menghentikan model menghasilkan token. Menentukan urutan penghenti adalah cara lain untuk mengontrol panjang dan struktur respons model. 
+Anda dapat mengubahnya jika anda memiliki format tertentu dalam keluaran model.
+
+### Frequency Penalty
+Frequency Penalty memberikan penalti pada token berikutnya yang sebanding dengan seberapa sering token tersebut sudah muncul dalam respons dan prompt. Semakin tinggi penalti frekuensi, semakin kecil kemungkinan sebuah kata akan muncul kembali. Pengaturan ini mengurangi pengulangan kata dalam respons model dengan memberikan penalti yang lebih besar pada token yang sering muncul.
+
+### Presence Penalty
+Presence Penalty juga memberikan penalti pada token yang diulang, tetapi berbeda dengan frekuensi, penalti ini sama untuk semua token yang diulang. 
+
+Cukup rubah salah satu dari frequency penalty atau presence penalty saja dan tidak keduanya.

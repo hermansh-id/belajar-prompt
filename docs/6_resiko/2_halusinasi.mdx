@@ -1,0 +1,31 @@
+# Halusinasi
+
+LLM memiliki tendensi untuk dapat menghasilkan respons yang sepertinya benar namun sebenarnya dibuat-buat. Hal tersebut terjadi karena LLM memiliki data pengetahuan terbatas.
+Untuk mengatasi hal ini kita dapat memperbaiki prompt sehingga dapat menghasilkan respons yang lebih baik.
+
+Solusi untuk mengatasi ini adalah menggunakan pengetahuan aktual seperti dari artikel web, wikipedia atau data lainnya.
+Beberapa model juga dirancang untuk dapat mengatakan tidak tahu ketika memang tidak memiiki data yang terkait.
+
+Contoh halusinasi adalah sebagai berikut:
+
+**Prompt**
+```
+Q: What is an atom? 
+A: An atom is a tiny particle that makes up everything. 
+
+Q: Who is Alvan Muntz? 
+A: ? 
+
+Q: What is Kozar-09? 
+A: ? 
+
+Q: How many moons does Mars have? 
+A: Two, Phobos and Deimos. 
+
+Q: Who is Neto Beto Roberto? 
+```
+
+**Output**
+```
+A: ?
+```

@@ -1,0 +1,30 @@
+# Chain-of-Thought (CoT) Prompting
+
+Chain-of-Thought atau dalam bahasa Indonesia kita sebut sebagai runtutan berfikir adalah teknik prompt yang memungkinkan kita untuk dapat meminta penalaran kompleks melalui step-step yang telah diberikan.
+Dalam CoT anda dapat menggabungkan teknik few shot dengan memberikan konteks atau contoh untuk menghasilkan akurasi yang lebih baik.
+
+**Prompt**
+```
+Bilangan berikut jika dijumlahkan akan menghasilkan bilangan ganjil: 2,3,4,5.
+J: Penjumlahan semua bilangan akan menghasilkan 14. Jawabannya salah.
+
+Bilangan berikut jika dijumlahkan akan menghasilkan bilangan ganjil: 8,6,1,2.
+J: Penjumlahan semua bilangan akan menghasilkan 17. Jawabannya benar.
+
+Bilangan berikut jika dijumlahkan akan menghasilkan bilangan ganjil: 6,8,2,3.
+J: Penjumlahan semua bilangan akan menghasilkan 19. Jawabannya benar.
+
+Bilangan berikut jika dijumlahkan akan menghasilkan bilangan ganjil: 4,9,3,2.
+J: Penjumlahan semua bilangan akan menghasilkan 18. Jawabannya salah.
+
+Bilangan berikut jika dijumlahkan akan menghasilkan bilangan ganjil: 6,7,8,2.
+J: 
+```
+
+Jawaban dari LLM adalah:
+```
+Penjumlahan semua bilangan 6, 7, 8, dan 2 akan menghasilkan 23. Jawabannya benar.
+```
+
+Jika kita melihat jawabannya maka bisa disimpulkan bahwa LLM mengerti bagaimana melakukan sesuatu dengan menggunakan langkah yang telah diberikan.
+

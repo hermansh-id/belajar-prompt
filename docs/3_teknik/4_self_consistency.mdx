@@ -1,0 +1,55 @@
+# Self-Consistency
+
+
+Self-Consistency yang dikembangkan oleh [Wang et al.](https://arxiv.org/abs/2203.11171) pada dasarnya memiliki ide dasar untuk meningkatkan akurasi CoT melalui penggunaan contoh yang lebih beragam.
+
+Untuk contoh seperti ini:
+
+**Prompt**
+```
+Jika pada saat saya berumur 6 tahun dan adik saya berusia setengah dari usia saya. 
+Maka berapa usia adik saya jika saya berusaia 70 tahun?
+```
+
+**Output**
+```
+35
+```
+
+Anda dapat melihat bahwa jawaban yang diberikan LLM mengalami kesalahan. Kita coba tambahkan contoh:
+
+
+**Prompt**
+
+```
+Q: Ada 15 pohon di kebun. Pekerja kebun akan menanam pohon hari ini. Setelah mereka selesai, akan ada 21 pohon. Berapa banyak pohon yang ditanam pekerja kebun hari ini?
+A: Kita mulai dengan 15 pohon. Kemudian, ada 21 pohon. Selisihnya adalah jumlah pohon yang mereka tanam. Jadi, mereka pasti menanam 21 - 15 = 6 pohon. Jawabannya adalah 6.
+
+Q: Jika ada 3 mobil di tempat parkir dan 2 mobil lagi datang, berapa banyak mobil yang ada di tempat parkir?
+A: Ada 3 mobil di tempat parkir. Kemudian, 2 mobil lagi datang. Sekarang ada 3 + 2 = 5 mobil. Jawabannya adalah 5.
+
+Q: Leah memiliki 32 cokelat dan saudara perempuannya memiliki 42 cokelat. Jika mereka makan 35 cokelat, berapa banyak cokelat yang tersisa?
+A: Leah memiliki 32 cokelat dan saudara perempuannya memiliki 42 cokelat. Itu berarti awalnya ada 32 + 42 = 74 cokelat. Mereka makan 35 cokelat. Jadi, totalnya masih ada 74 - 35 = 39 cokelat. Jawabannya adalah 39.
+
+Q: Jason memiliki 20 permen lollipop. Dia memberikan beberapa permen lollipop kepada Denny. Sekarang Jason memiliki 12 permen lollipop. Berapa banyak permen lollipop yang Jason berikan kepada Denny?
+A: Jason memiliki 20 permen lollipop. Karena dia sekarang hanya memiliki 12, dia pasti memberikan sisanya kepada Denny. Jumlah permen lollipop yang dia berikan kepada Denny adalah 20 - 12 = 8 permen lollipop. Jawabannya adalah 8.
+
+Q: Shawn memiliki lima mainan. Untuk Natal, dia mendapatkan dua mainan dari ibunya dan ayahnya. Berapa banyak mainan yang dia miliki sekarang?
+A: Dia memiliki 5 mainan. Dia mendapatkan 2 mainan dari ibunya, jadi setelah itu dia memiliki 5 + 2 = 7 mainan. Kemudian dia mendapatkan 2 lagi dari ayahnya, jadi total dia memiliki 7 + 2 = 9 mainan. Jawabannya adalah 9.
+
+Q: Ada sembilan komputer di ruang server. Lima komputer lagi dipasang setiap hari, dari Senin hingga Kamis. Berapa banyak komputer yang sekarang ada di ruang server?
+A: Ada 4 hari dari Senin hingga Kamis. 5 komputer ditambahkan setiap hari. Itu berarti total ada 4 * 5 = 20 komputer yang ditambahkan. Awalnya ada 9 komputer, jadi sekarang ada 9 + 20 = 29 komputer. Jawabannya adalah 29.
+
+Q: Michael memiliki 58 bola golf. Pada hari Selasa, dia kehilangan 23 bola golf. Pada hari Rabu, dia kehilangan 2 bola lagi. Berapa banyak bola golf yang dia miliki pada akhir hari Rabu?
+A: Michael awalnya memiliki 58 bola. Dia kehilangan 23 bola pada hari Selasa, jadi setelah itu dia memiliki 58 - 23 = 35 bola. Pada hari Rabu dia kehilangan 2 bola lagi, jadi sekarang dia memiliki 35 - 2 = 33 bola. Jawabannya adalah 33.
+
+Q: Olivia memiliki $23. Dia membeli lima bagel seharga $3 masing-masing. Berapa banyak uang yang tersisa?
+A: Dia membeli 5 bagel seharga $3 masing-masing. Ini berarti dia menghabiskan $15. Dia memiliki $8 tersisa.
+
+Q: Ketika saya berumur 6 tahun, saudara perempuan saya setengah usia saya. Sekarang saya berumur 70 tahun, berapa usia saudara perempuan saya?
+```
+
+**Output**
+```
+Ketika saya berumur 6 tahun, saudara perempuan saya setengah usia saya, jadi dia berumur 3 tahun. Sekarang saya berumur 70 tahun, jadi dia berumur 70 - 3 = 67 tahun. Jawabannya adalah 67.
+```

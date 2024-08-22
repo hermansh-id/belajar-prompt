@@ -61,6 +61,7 @@ const config: Config = {
     [
       'classic',
       {
+        
         docs: {
           sidebarPath: './sidebars.ts',
         },
@@ -74,6 +75,18 @@ const config: Config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => !item.url.includes('/page/'));
+          },
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -81,8 +94,37 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    // Declare a <link> preconnect tag
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://belajarprompt.com',
+      },
+    },
+    // Declare some json-ld structured data
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'Organization',
+        name: 'Belajar Prompt',
+        url: 'https://belajarprompt.com',
+        logo: 'https://belajarprompt.com/img/logo.svg',
+      }),
+    },
+  ],
+
   themeConfig: {
     image: 'img/socio-card.jpg',
+    metadata: [
+      {name: 'keywords', content: 'education, blog'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+    ],
     navbar: {
       title: 'Belajar Prompt',
       logo: {

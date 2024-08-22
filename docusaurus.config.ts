@@ -28,7 +28,7 @@ const config: Config = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/docusaurus.png',
+            href: '/img/logo.png',
           },
           {
             tagName: 'link',
@@ -82,7 +82,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/socio-card.jpg',
     navbar: {
       title: 'Belajar Prompt',
       logo: {

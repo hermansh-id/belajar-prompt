@@ -2,9 +2,8 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-
+import Head from '@docusaurus/Head';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -34,6 +33,9 @@ export default function Home(): JSX.Element {
     <Layout
       title="Beranda"
       description="Belajar Prompt">
+        <Head>
+          <meta name="google-site-verification" content="tcqw12ZhmlvDInlUPoIccqBBt7WFSkBf2Nt45w2oSCk" />
+        </Head>
       <HomepageHeader />
       <main>
       </main>
